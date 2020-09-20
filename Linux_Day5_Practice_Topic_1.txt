@@ -1,0 +1,72 @@
+1. copy move rename delete.
+2. understanding using sudo.
+3. installing a package (.rpm ) and other package management using yum and rpm.
+4. gip and unzipping in linux.
+5. checking service status. start and stop services.
+
+=====================================================================
+Copy#
+cp FileName DestinationLocation.
+example. cp myfile.txt /project/
+
+Move#
+mv FileName DestinationLocation
+example. mv myfile.txt /tmp
+
+Rename# 
+mv OldFileName NewFileName
+example. mv hello.txt hi.txt
+
+Delete#
+rm hi.txt
+rm -f hi.txt
+rmdir mydirectory
+rm -rf mydirectory1
+
+=====================================================================
+#Installing & Managing Package/Software (.rpm)
+sudo yum install httpd  --> to install a package.
+sudo yum remove httpd --> to uninstall a package.
+sudo yum update httpd --> to update a package.
+sudo yum list httpd ---> to search a package.
+sudo yum info httpd --> to get info of a package.
+
+sudo rpm -ivh httpd* --to install a package.
+sudo rpm -qpR httpd*  --to check dependencies of a package.
+sudo rpm -q httpd*  --to query a package
+sudo rpm -qa httpd* -- to query a package
+sudo rpm -eev  -- to remove a package
+
+====================================================================
+Zip and Unzip#
+
+gzip filename  --> to zip a file.
+gunzip filename  --> to unzip a file.
+
+tar -czvf Mydirectory.tar.gz  Mydirectory --> to zip a directory.
+tar -xzvf Mydirectory.tar.gz  --> to unzip a directory.
+
+=====================================================================
+#Service/Daemon Start Stop
+
+sudo systemctl status httpd  --> to check status of a service
+sudo systemctl stop httpd    --> to stop
+sudo systemctl start httpd   --> to start
+sudo systemctl enable httpd  --> to enable permanently 
+sudo systemctl disable httpd --> to disable permanently
+
+sudo ps -ef |grep -i httpd   --> to check the pid.
+sudo kill pid  --> to kill the process.
+
+======================================================================
+
+
+Examples (1):
+#!/bin/bash
+a=50 b=30
+echo `expr $a + $b`
+echo `expr $a - $b`
+echo `expr $a \* $b`
+echo `expr $a / $b`
+echo `expr $a % $b
+ 
